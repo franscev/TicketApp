@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F41682B21B1552D00A38378 /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41682A21B1552D00A38378 /* BuyVC.swift */; };
 		7FE4BE7B21A8196600EDE964 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4BE7A21A8196600EDE964 /* AppDelegate.swift */; };
 		7FE4BE7D21A8196600EDE964 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4BE7C21A8196600EDE964 /* ViewController.swift */; };
 		7FE4BE8021A8196600EDE964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE7E21A8196600EDE964 /* Main.storyboard */; };
 		7FE4BE8221A8196700EDE964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE8121A8196700EDE964 /* Assets.xcassets */; };
 		7FE4BE8521A8196700EDE964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE8321A8196700EDE964 /* LaunchScreen.storyboard */; };
+		7FFCEAE221AEA4910011367D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE121AEA4910011367D /* Settings.bundle */; };
+		7FFCEAE621AEB6910011367D /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE521AEB6910011367D /* TicketDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F41682A21B1552D00A38378 /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyVC.swift; sourceTree = "<group>"; };
 		7FE4BE7721A8196600EDE964 /* TicketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE4BE7A21A8196600EDE964 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE4BE7C21A8196600EDE964 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		7FE4BE8121A8196700EDE964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FE4BE8421A8196700EDE964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE4BE8621A8196700EDE964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FFCEAE121AEA4910011367D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		7FFCEAE521AEB6910011367D /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				7FE4BE8121A8196700EDE964 /* Assets.xcassets */,
 				7FE4BE8321A8196700EDE964 /* LaunchScreen.storyboard */,
 				7FE4BE8621A8196700EDE964 /* Info.plist */,
+				7FFCEAE121AEA4910011367D /* Settings.bundle */,
+				7FFCEAE521AEB6910011367D /* TicketDetail.swift */,
+				7F41682A21B1552D00A38378 /* BuyVC.swift */,
 			);
 			path = TicketApp;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFCEAE221AEA4910011367D /* Settings.bundle in Resources */,
 				7FE4BE8521A8196700EDE964 /* LaunchScreen.storyboard in Resources */,
 				7FE4BE8221A8196700EDE964 /* Assets.xcassets in Resources */,
 				7FE4BE8021A8196600EDE964 /* Main.storyboard in Resources */,
@@ -135,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F41682B21B1552D00A38378 /* BuyVC.swift in Sources */,
+				7FFCEAE621AEB6910011367D /* TicketDetail.swift in Sources */,
 				7FE4BE7D21A8196600EDE964 /* ViewController.swift in Sources */,
 				7FE4BE7B21A8196600EDE964 /* AppDelegate.swift in Sources */,
 			);
