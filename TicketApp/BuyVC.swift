@@ -6,8 +6,14 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var buyButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-    let colores = [#colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1), #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)]
+
+    let images = [#imageLiteral(resourceName: "julian"),#imageLiteral(resourceName: "esperanza"),#imageLiteral(resourceName: "pat"),#imageLiteral(resourceName: "tom"),#imageLiteral(resourceName: "chemasaiz")]
     
+    let titles = ["Julian Lage", "E. Spalding", "Pat Metheny", "Tom Misch", "Chema Saiz"]
+    let places = ["Café Central", "Clamores", "Café Berlín", "UniversiJazz", "Jazzville"]
+    let dates = ["23/01/19", "13/05/19", "19/05/19", "31/05/19", "03/06/19"]
+    
+
     
     override func viewDidLoad() {
         
@@ -15,7 +21,7 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight = 72
+        tableView.rowHeight = 140
         
     }
     
@@ -24,14 +30,17 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colores.count
+        return images.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda", for: indexPath) as! BuyTicketCell
         
-        cell.backgroundColor = colores[indexPath.row]
+        cell.imageCell.image = images[indexPath.row]
+        cell.titleEvent.text = titles[indexPath.row]
+        cell.placeEvent.text = "at " + places[indexPath.row]
+        cell.dateEvent.text = dates[indexPath.row]
         
         return cell
     }
@@ -44,9 +53,12 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func sumarPrecioCeldas()->Int{
         var total: Int = 0
         
-        for i in 0...colores.count{
+        for i in 0...images.count{
             let cell = tableView.cellForRow(at: IndexPath(row: i, section: 1)) as! BuyTicketCell
+            
+            
             total += cell.totalPrice
+            
         
         }
         

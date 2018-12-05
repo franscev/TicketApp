@@ -4,7 +4,15 @@ import UIKit
 class BuyTicketCell: UITableViewCell {
     @IBOutlet weak var stepper: UIStepper!
     
+   
+    
     public var totalPrice: Int = 0
+    
+    @IBOutlet weak var titleEvent: UILabel!
+    @IBOutlet weak var dateEvent: UILabel!
+    @IBOutlet weak var placeEvent: UILabel!
+    
+    @IBOutlet weak var imageCell: UIImageView!
     
     @IBOutlet weak var priceForEntry: UILabel!
     @IBOutlet weak var numberOfTickets: UILabel!
@@ -31,7 +39,7 @@ class BuyTicketCell: UITableViewCell {
         
         var quantityTickets = 0
         quantityTickets = Int(sender.value)
-        numberOfTickets.text = String(quantityTickets)
+        numberOfTickets.text = "x" + String(quantityTickets) + "(20€)"
         
         totalPrice = quantityTickets * 20
         
