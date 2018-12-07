@@ -46,13 +46,22 @@
                                     </tabBarItem>
                                 </items>
                             </tabBar>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-3I-Hll">
-                                <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-3I-Hll">
+                                <rect key="frame" x="0.0" y="64" width="320" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>All</string>
+                                    <string>Indie</string>
+                                    <string>Jazz</string>
+                                    <string>Metal</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="QxE-EQ-8Rj" id="TOq-VX-JrV"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lBt-97-0wb" userLabel="ListadoCeldasTV">
-                                <rect key="frame" x="0.0" y="120" width="320" height="369"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idZelda" id="REl-MK-KVp" customClass="BuyTicketCell" customModule="TicketApp" customModuleProvider="target">

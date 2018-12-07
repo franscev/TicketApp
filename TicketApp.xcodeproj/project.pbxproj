@@ -16,6 +16,7 @@
 		7FE4BE8521A8196700EDE964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE8321A8196700EDE964 /* LaunchScreen.storyboard */; };
 		7FFCEAE221AEA4910011367D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE121AEA4910011367D /* Settings.bundle */; };
 		7FFCEAE621AEB6910011367D /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE521AEB6910011367D /* TicketDetail.swift */; };
+		884B608E21BA12CE003D2B4E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B608D21BA12CD003D2B4E /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7FE4BE8621A8196700EDE964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FFCEAE121AEA4910011367D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7FFCEAE521AEB6910011367D /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
+		884B608D21BA12CD003D2B4E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				7FFCEAE521AEB6910011367D /* TicketDetail.swift */,
 				7F41682A21B1552D00A38378 /* BuyVC.swift */,
 				7F878D1221B55D9D00B776E2 /* BuyTicketCell.swift */,
+				884B608D21BA12CD003D2B4E /* Event.swift */,
 			);
 			path = TicketApp;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				7FFCEAE621AEB6910011367D /* TicketDetail.swift in Sources */,
 				7FE4BE7D21A8196600EDE964 /* ViewController.swift in Sources */,
 				7FE4BE7B21A8196600EDE964 /* AppDelegate.swift in Sources */,
+				884B608E21BA12CE003D2B4E /* Event.swift in Sources */,
 				7F878D1321B55D9D00B776E2 /* BuyTicketCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
