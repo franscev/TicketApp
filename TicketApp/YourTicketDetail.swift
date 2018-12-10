@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class YourTicketDetail: UIViewController {
 
     @IBOutlet weak var txtField: UITextField!
     

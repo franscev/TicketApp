@@ -36,9 +36,24 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         
         setUpConcerts()
         setUpSearchBar()
+        setUpDate()
         setUpTableView()
     }
    
+    //DATE
+    
+    private func setUpDate(){
+        let fecha = Date()
+        print(fecha)
+        
+        let fechaUnix = fecha.timeIntervalSince1970
+        
+        let fecha1 = Date(timeIntervalSince1970: fechaUnix)
+        
+        print(fecha1)
+        
+    }
+    
     
     //CONCERTS
     private func setUpConcerts(){
@@ -82,16 +97,26 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("navegando...")
-    }
-    
     private func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 140
     }
     
+    
+    //SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let buyDetailVC = segue.destination as! BuyDetailVC
+        let celda = sender as! BuyTicketCell
+        
+        buyDetailVC.artistName = celda.titleEvent.text!
+        buyDetailVC.imageArtist = celda.imageCell!
+        buyDetailVC.place = celda.placeEvent.text!
+        buyDetailVC.date = celda.dateEvent.text!
+    }
+    
+   
     //SEARCH BAR
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
