@@ -121,7 +121,6 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
             event.category == Event.ConcertType.indieRock
                 })
         case 2:
-            
             currentEventArray = eventArray.filter({ event -> Bool in
             event.category == Event.ConcertType.jazz
                 })
@@ -147,4 +146,5 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
 //        return total
 //    }
 //
+
 }
