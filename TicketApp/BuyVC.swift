@@ -4,8 +4,6 @@ import UIKit
 class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var buyButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
     
     var buyTicketCell = [BuyTicketCell]()
@@ -31,10 +29,14 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
     var eventArray = [Event]()
     var currentEventArray = [Event]()
     
+    var eventArrayCopy = [Event]()
     
+
     override func viewDidLoad() {
         
+        
         setUpConcerts()
+        
         setUpSearchBar()
         setUpDate()
         setUpTableView()
@@ -72,8 +74,11 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         for i in 0...(titlesMetal.count - 1){
             eventArray.append(Event(title: titlesMetal[i], category: .metal, date: datesMetal[i], place: placesMetal[i], image:imagesMetal[i], tickets:0, price:20))
         }
+       
         currentEventArray = eventArray
+        
     }
+    
     
     //TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,6 +94,9 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
             return BuyTicketCell()
         }
         
+     
+        
+
         cell.titleEvent.text = currentEventArray[indexPath.row].title
         cell.dateEvent.text =  currentEventArray[indexPath.row].date
         cell.placeEvent.text = "at " + currentEventArray[indexPath.row].place
@@ -103,18 +111,44 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         tableView.rowHeight = 140
     }
     
+    //GUARDAR DATOS DE LA CELDA SELECCIONADA
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        eventArrayCopy.append(eventArray[indexPath.row])
+        
+        
+//        for i in 0...(eventArrayCopy.count - 1) {
+//            print(i)
+//            print(eventArrayCopy[i].title)
+//        }
+
+    }
+    
+    
     
     //SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let buyDetailVC = segue.destination as! BuyDetailVC
-        let celda = sender as! BuyTicketCell
         
-        buyDetailVC.artistName = celda.titleEvent.text!
-        buyDetailVC.imageArtist = celda.imageCell!
-        buyDetailVC.place = celda.placeEvent.text!
-        buyDetailVC.date = celda.dateEvent.text!
+
+            
+            let buyDetailVC = segue.destination as! BuyDetailVC
+           
+            
+            let celda = sender as! BuyTicketCell
+            
+            buyDetailVC.artistName = celda.titleEvent.text!
+            buyDetailVC.imageArtist = celda.imageCell!
+            buyDetailVC.place = celda.placeEvent.text!
+            buyDetailVC.date = celda.dateEvent.text!
+            //buyDetailVC.event = eventArrayCopy
+            //buyDetailVC.event.append(eventArrayCopy[0])
+            
+       
+        
+        
     }
+    
+    
     
    
     //SEARCH BAR

@@ -20,6 +20,7 @@
 		8817324921BDACA400AA249F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817324821BDACA400AA249F /* MainNavigationController.swift */; };
 		8817324B21BE1E7F00AA249F /* BuyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817324A21BE1E7F00AA249F /* BuyDetailVC.swift */; };
 		884B608E21BA12CE003D2B4E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B608D21BA12CD003D2B4E /* Event.swift */; };
+		88A3A8AC21BF47D400853221 /* BoughtTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3A8AB21BF47D400853221 /* BoughtTicketCell.swift */; };
 		88B0FE7221BE36F800A5E95B /* Bought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0FE7121BE36F800A5E95B /* Bought.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		8817324821BDACA400AA249F /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		8817324A21BE1E7F00AA249F /* BuyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyDetailVC.swift; sourceTree = "<group>"; };
 		884B608D21BA12CD003D2B4E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		88A3A8AB21BF47D400853221 /* BoughtTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtTicketCell.swift; sourceTree = "<group>"; };
 		88B0FE7121BE36F800A5E95B /* Bought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bought.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				8817324821BDACA400AA249F /* MainNavigationController.swift */,
 				8817324A21BE1E7F00AA249F /* BuyDetailVC.swift */,
 				88B0FE7121BE36F800A5E95B /* Bought.swift */,
+				88A3A8AB21BF47D400853221 /* BoughtTicketCell.swift */,
 			);
 			path = TicketApp;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				8817324921BDACA400AA249F /* MainNavigationController.swift in Sources */,
 				7FFCEAE621AEB6910011367D /* YourTickets.swift in Sources */,
 				7FE4BE7D21A8196600EDE964 /* YourTicketDetail.swift in Sources */,
+				88A3A8AC21BF47D400853221 /* BoughtTicketCell.swift in Sources */,
 				7FE4BE7B21A8196600EDE964 /* AppDelegate.swift in Sources */,
 				884B608E21BA12CE003D2B4E /* Event.swift in Sources */,
 				7F878D1321B55D9D00B776E2 /* BuyTicketCell.swift in Sources */,
