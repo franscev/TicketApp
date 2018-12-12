@@ -4,9 +4,9 @@ import UIKit
 class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var myTickets = [Event] ()
-    
+  
     @IBOutlet weak var button: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +14,10 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
         setUpTableView()
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        refreshTable()
     }
     
     
@@ -25,10 +29,12 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         
     }
+
     
     func refreshTable(){
         tableView?.reloadData()
-        print("HOLAAAA")
+       
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,19 +44,17 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myTickets.count
+        return boughtTickets.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda2", for: indexPath) as? BoughtTicketCell else{
-            return BoughtTicketCell()
-            
-        }
+      let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda2", for: indexPath) as! BoughtTicketCell
         
-        cell.titleEvent.text = myTickets[indexPath.row].title
-        cell.dateEvent.text =  myTickets[indexPath.row].date
-        cell.placeEvent.text = "at " + myTickets[indexPath.row].place
-        cell.imageCell.image = myTickets[indexPath.row].image
+        cell.titleEvent.text = boughtTickets[indexPath.row].title
+        cell.dateEvent.text =  boughtTickets[indexPath.row].date
+        cell.placeEvent.text = "at " + boughtTickets[indexPath.row].place
+        cell.imageCell.image = boughtTickets[indexPath.row].image
         
         return cell
     }

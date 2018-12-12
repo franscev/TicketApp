@@ -8,10 +8,11 @@ class BuyDetailVC: UIViewController {
     @IBOutlet weak var pictureImgView: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
     var artistName = String ()
     var date = String ()
     var place = String ()
-    var imageArtist = UIImageView ()
+    var imageArtist = UIImage ()
     
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var stepper: UIStepper!
@@ -21,7 +22,6 @@ class BuyDetailVC: UIViewController {
     
     var quantityTickets = 0
     
-    var event = [Event]()
   
     
     override func viewDidLoad() {
@@ -29,10 +29,11 @@ class BuyDetailVC: UIViewController {
      
 
         initStepper()
+        
         nameLabel.text = artistName
         dateLabel.text = date
         placeLabel.text = place
-        pictureImgView.image = imageArtist.image
+        pictureImgView.image = imageArtist
       
         
     }
@@ -54,27 +55,16 @@ class BuyDetailVC: UIViewController {
         
         let bought = segue.destination as! Bought
         //let yourTickets = segue.destination as! YourTickets
-
-        
         
         buyButton = sender as! UIButton
         
-//        var yourTickets = YourTickets()
         
+        let event = Event(title: artistName, category: Event.ConcertType.indieRock, date: date, place: place, image: imageArtist, tickets: 0, price: 0)
+        
+        boughtTickets.append(event)
+        print("Prueba: " + boughtTickets[boughtTickets.count - 1].title)
         
         bought.succesfull = "You have bought " + String(quantityTickets) + " tickets" + " of " + artistName + " " + place + " " + "in " + date
-        
-//        let buyVC = BuyVC()
-//
-//        yourTickets.myTickets = buyVC.eventArrayCopy
-//
-//        print(yourTickets.myTickets)
-//
-//        yourTickets.refreshTable()
-        
-      
-        
-   
         
     }
     

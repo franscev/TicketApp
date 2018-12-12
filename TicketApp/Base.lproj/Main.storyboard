@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNg-64-ZgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3199" y="67"/>
+            <point key="canvasLocation" x="-2513" y="-268"/>
         </scene>
         <!--Your Tickets-->
         <scene sceneID="3vX-G3-fW4">
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkP-Mt-2N7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-720" y="-111"/>
+            <point key="canvasLocation" x="-720" y="-268"/>
         </scene>
         <!--Tab Bar Cont-->
         <scene sceneID="jzx-c4-qiJ">
@@ -78,7 +78,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9Q-t3-69S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3634" y="-735"/>
+            <point key="canvasLocation" x="-3643" y="-657"/>
         </scene>
         <!--Discover-->
         <scene sceneID="mVw-bd-K4A">
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="-112"/>
+            <point key="canvasLocation" x="90" y="-268"/>
         </scene>
         <!--Your Tickets TableView-->
         <scene sceneID="wxR-jK-ag5">
@@ -442,7 +442,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="idZelda2" id="vsZ-Bx-klI" userLabel="idZelda2" customClass="BuyTicketCell" customModule="TicketApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="idZelda2" id="vsZ-Bx-klI" userLabel="idZelda2" customClass="BoughtTicketCell" customModule="TicketApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vsZ-Bx-klI" id="CZC-g1-W0t" customClass="BoughtTicketCell" customModule="TicketApp" customModuleProvider="target">
@@ -486,14 +486,12 @@
                                                 <constraint firstItem="yv1-rw-4kY" firstAttribute="leading" secondItem="CZC-g1-W0t" secondAttribute="leading" constant="20" id="Tm6-tw-jiT"/>
                                                 <constraint firstItem="yv1-rw-4kY" firstAttribute="centerY" secondItem="CZC-g1-W0t" secondAttribute="centerY" id="aP0-mJ-odA"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="dateEvent" destination="U1B-oH-XWN" id="iDq-Pa-DOh"/>
-                                                <outlet property="imageCell" destination="yv1-rw-4kY" id="ZnV-fX-oKl"/>
-                                                <outlet property="placeEvent" destination="vLY-Md-QVY" id="9e6-IE-org"/>
-                                                <outlet property="titleEvent" destination="eLn-Zn-HTD" id="cfw-OJ-O4c"/>
-                                            </connections>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateEvent" destination="U1B-oH-XWN" id="UW0-Kd-NyI"/>
+                                            <outlet property="imageCell" destination="yv1-rw-4kY" id="1Ez-Rw-OaV"/>
+                                            <outlet property="placeEvent" destination="vLY-Md-QVY" id="aUf-Te-k4V"/>
+                                            <outlet property="titleEvent" destination="eLn-Zn-HTD" id="RaU-fX-vmD"/>
                                             <segue destination="Gpf-DZ-iSf" kind="show" id="Kx5-Le-FN7"/>
                                         </connections>
                                     </tableViewCell>
@@ -516,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="At3-cB-3WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1708" y="-113"/>
+            <point key="canvasLocation" x="-1573" y="-268"/>
         </scene>
     </scenes>
     <resources>

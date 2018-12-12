@@ -36,7 +36,6 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         
         
         setUpConcerts()
-        
         setUpSearchBar()
         setUpDate()
         setUpTableView()
@@ -94,9 +93,6 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
             return BuyTicketCell()
         }
         
-     
-        
-
         cell.titleEvent.text = currentEventArray[indexPath.row].title
         cell.dateEvent.text =  currentEventArray[indexPath.row].date
         cell.placeEvent.text = "at " + currentEventArray[indexPath.row].place
@@ -111,46 +107,26 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         tableView.rowHeight = 140
     }
     
-    //GUARDAR DATOS DE LA CELDA SELECCIONADA
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        eventArrayCopy.append(eventArray[indexPath.row])
-        
-        
-//        for i in 0...(eventArrayCopy.count - 1) {
-//            print(i)
-//            print(eventArrayCopy[i].title)
-//        }
-
-    }
     
     
     
     //SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-
-            
             let buyDetailVC = segue.destination as! BuyDetailVC
-           
-            
+        
             let celda = sender as! BuyTicketCell
             
             buyDetailVC.artistName = celda.titleEvent.text!
-            buyDetailVC.imageArtist = celda.imageCell!
+            buyDetailVC.imageArtist = celda.imageCell.image!
             buyDetailVC.place = celda.placeEvent.text!
             buyDetailVC.date = celda.dateEvent.text!
             //buyDetailVC.event = eventArrayCopy
             //buyDetailVC.event.append(eventArrayCopy[0])
-            
-       
-        
-        
+
     }
     
-    
-    
-   
+
     //SEARCH BAR
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
@@ -192,18 +168,5 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
     }
     tableView.reloadData()
    }
-    
-
-//    func sumarPrecioCeldas()->Int{
-//        var total: Int = 0
-//
-//        for i in 0...(imagesJazz.count - 1){
-//            let cell = tableView.cellForRow(at: IndexPath(row: i, section: 1)) as! BuyTicketCell
-//            total += cell.totalPrice
-//        }
-//        buyButton.setTitle(String(total) + "€", for: UIControlState.normal)
-//        return total
-//    }
-//
 
 }
