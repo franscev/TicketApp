@@ -3,9 +3,10 @@ import UIKit
 
 class BoughtTicketCell: UITableViewCell  {
 
-    @IBOutlet weak var titleEvent: UILabel!
-    @IBOutlet weak var dateEvent: UILabel!
-    @IBOutlet weak var placeEvent: UILabel!
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var imageCell: UIImageView!
     

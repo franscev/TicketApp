@@ -3,34 +3,43 @@ import UIKit
 
 class YourTicketDetail: UIViewController {
 
-    @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var imageQR: UIImageView!
     
-    @IBOutlet weak var buttonGenerate: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var artistImageView: UIImageView!
     
-    @IBOutlet weak var myImageView: UIImageView!
+    
+    var artistName = String ()
+    var date = String ()
+    var place = String ()
+    var imageArtist = UIImage ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        artistNameLabel.text = artistName
+        dateLabel.text = date
+        placeLabel.text = place
+        artistImageView.image = imageArtist
+        generateQR()
     }
 
 
-    @IBAction func generateQR(_ sender: Any) {
+    func generateQR(){
+        let data = artistName.data(using: .ascii, allowLossyConversion: false)
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        let ciImage = filter?.outputImage
         
-        if let myString = txtField.text
-        {
-            let data = myString.data(using: .ascii, allowLossyConversion: false)
-            let filter = CIFilter(name: "CIQRCodeGenerator")
-            filter?.setValue(data, forKey: "inputMessage")
-            let ciImage = filter?.outputImage
-            
-            let transform = CGAffineTransform(scaleX: 10, y: 10)
-            let transformImage = ciImage?.transformed(by: transform)
-            
-            let image = UIImage(ciImage: transformImage!)
-            myImageView.image = image
-            
-        }
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        let transformImage = ciImage?.transformed(by: transform)
+        
+        let image = UIImage(ciImage: transformImage!)
+        imageQR.image = image
     }
+        
+
 }
 

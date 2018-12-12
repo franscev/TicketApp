@@ -34,7 +34,6 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
 
     override func viewDidLoad() {
         
-        
         setUpConcerts()
         setUpSearchBar()
         setUpDate()
@@ -78,7 +77,6 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         
     }
     
-    
     //TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -107,9 +105,7 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         tableView.rowHeight = 140
     }
     
-    
-    
-    
+
     //SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

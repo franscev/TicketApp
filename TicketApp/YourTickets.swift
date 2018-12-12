@@ -5,15 +5,12 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     @IBOutlet weak var tableView: UITableView!
   
-    @IBOutlet weak var button: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpTableView()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,8 +23,6 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 140
-        
-        
     }
 
     
@@ -45,15 +40,18 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return boughtTickets.count
+    
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda2", for: indexPath) as! BoughtTicketCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda3", for: indexPath) as? BoughtTicketCell else{
+            return BoughtTicketCell()
+        }
         
-        cell.titleEvent.text = boughtTickets[indexPath.row].title
-        cell.dateEvent.text =  boughtTickets[indexPath.row].date
-        cell.placeEvent.text = "at " + boughtTickets[indexPath.row].place
+        cell.titleLabel.text = boughtTickets[indexPath.row].title
+        cell.dateLabel.text =  boughtTickets[indexPath.row].date
+        cell.placeLabel.text = boughtTickets[indexPath.row].place
         cell.imageCell.image = boughtTickets[indexPath.row].image
         
         return cell
@@ -63,14 +61,14 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let yourTicketDetail = segue.destination as! YourTicketDetail
-        button = sender as! UIButton
         
-        //let celda = sender as! BuyTicketCell
+        let celda = sender as! BoughtTicketCell
         
-//        buyDetailVC.artistName = celda.titleEvent.text!
-//        buyDetailVC.imageArtist = celda.imageCell!
-//        buyDetailVC.place = celda.placeEvent.text!
-//        buyDetailVC.date = celda.dateEvent.text!
+        yourTicketDetail.artistName = celda.titleLabel.text!
+        yourTicketDetail.imageArtist = celda.imageCell.image!
+        yourTicketDetail.place = celda.placeLabel.text!
+        yourTicketDetail.date = celda.dateLabel.text!
+        
     }
 
 }
