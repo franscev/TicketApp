@@ -16,31 +16,25 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     
-    
+    // TABLE VIEW
     private func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 140
     }
 
-    
     func refreshTable(){
         tableView?.reloadData()
-       
-
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return boughtTickets.count
     
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "idZelda3", for: indexPath) as? BoughtTicketCell else{
@@ -55,7 +49,7 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return cell
     }
     
-
+    // SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let yourTicketDetail = segue.destination as! YourTicketDetail
@@ -68,5 +62,4 @@ class YourTickets: UIViewController, UITableViewDelegate, UITableViewDataSource,
         yourTicketDetail.date = celda.dateLabel.text!
         
     }
-
 }

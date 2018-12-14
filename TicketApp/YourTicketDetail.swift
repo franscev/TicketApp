@@ -27,6 +27,7 @@ class YourTicketDetail: UIViewController {
     }
 
 
+    // GENERATE QR
     func generateQR(){
         let data = artistName.data(using: .ascii, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
@@ -39,7 +40,5 @@ class YourTicketDetail: UIViewController {
         let image = UIImage(ciImage: transformImage!)
         imageQR.image = image
     }
-        
-
 }
 

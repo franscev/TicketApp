@@ -34,28 +34,13 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
 
     override func viewDidLoad() {
         
+        UIApplication.shared.statusBarStyle = .lightContent
         setData()
         setUpConcerts()
         setUpSearchBar()
-        setUpDate()
         setUpTableView()
     }
    
-    //DATE
-    
-    private func setUpDate(){
-        let fecha = Date()
-        print(fecha)
-        
-        let fechaUnix = fecha.timeIntervalSince1970
-        
-        let fecha1 = Date(timeIntervalSince1970: fechaUnix)
-        
-        print(fecha1)
-        
-    }
-    
-    
     //CONCERTS
     private func setUpConcerts(){
         
@@ -110,26 +95,25 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
     //SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-            let buyDetailVC = segue.destination as! BuyDetailVC
+        let buyDetailVC = segue.destination as! BuyDetailVC
         
-            let celda = sender as! BuyTicketCell
+        let celda = sender as! BuyTicketCell
             
-            buyDetailVC.artistName = celda.titleEvent.text!
-            buyDetailVC.imageArtist = celda.imageCell.image!
-            buyDetailVC.place = celda.placeEvent.text!
-            buyDetailVC.date = celda.dateEvent.text!
-            //buyDetailVC.event = eventArrayCopy
-            //buyDetailVC.event.append(eventArrayCopy[0])
+        buyDetailVC.artistName = celda.titleEvent.text!
+        buyDetailVC.imageArtist = celda.imageCell.image!
+        buyDetailVC.place = celda.placeEvent.text!
+        buyDetailVC.date = celda.dateEvent.text!
+        
 
     }
     
-
+    
     //SEARCH BAR
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             currentEventArray = eventArray
             tableView.reloadData()
-            return}
+        return}
         
         currentEventArray = eventArray.filter({event -> Bool in
            event.title.lowercased().contains(searchText.lowercased())
@@ -141,7 +125,7 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
         searchBar.delegate = self
     }
     
-    
+    // SEARCH BAR SCOPE
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
     
         switch selectedScope{
@@ -165,5 +149,4 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
     }
     tableView.reloadData()
    }
-
 }

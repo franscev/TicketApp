@@ -22,36 +22,31 @@ class BuyDetailVC: UIViewController {
     
     var quantityTickets = 0
     
-  
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        if dismissBool{
-//            dismissBool = false
-//            print(dismissBool)
-//            dismiss(animated: true, completion: nil)
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
      
-       
-        
         initStepper()
-        
-        nameLabel.text = artistName
-        dateLabel.text = date
-        placeLabel.text = place
-        pictureImgView.image = imageArtist
-      
+        setLabels()
     }
     
-   
+    // SET INITIAL LABELS
+    func setLabels(){
+    nameLabel.text = artistName
+    dateLabel.text = date
+    placeLabel.text = place
+    pictureImgView.image = imageArtist
+    
+    buyButton.isEnabled = false
+    buyButton.backgroundColor = UIColor.lightGray
+    
+    }
+    
+    // ACTION BUTTON FOR SENDER PREPARE
     @IBAction func buyTicketButton(_ sender: Any) {
     
-
     }
     
+    // SET STEPPER
     func initStepper(){
         
         stepper.maximumValue = 10
@@ -61,29 +56,35 @@ class BuyDetailVC: UIViewController {
     }
     
     
-    
+    // SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let bought = segue.destination as! Bought
-        //let yourTickets = segue.destination as! YourTickets
-        
         buyButton = sender as! UIButton
         
         let event = Event(title: artistName, category: Event.ConcertType.indieRock, date: date, place: place, image: imageArtist, tickets: 0, price: 0)
-        
         boughtTickets.append(event)
-        print("Prueba: " + boughtTickets[boughtTickets.count - 1].title)
-        
-        bought.succesfull = "You have bought " + String(quantityTickets) + " tickets" + " of " + artistName + " " + place + " " + "in " + date
+        bought.succesfull = "You have bought " + String(quantityTickets) + " tickets" + " of " + artistName + " " + place + " " + "in " + date + ". \r\n" + "\r\n Go to ''Your Tickets'' section for get it."
         saveData()
     }
     
+    // CHOOSE TICKET WITH STEPPER
     @IBAction func chooseNumberOfTickets(_ sender: UIStepper) {
+        
         quantityTickets = Int(sender.value)
-        numberOfTickets.text = "x" + String(quantityTickets) + "(20€)"
+        numberOfTickets.text = "x" + String(quantityTickets)
         
         totalPrice = quantityTickets * 20
+        priceForEntry.text = " - " + String(totalPrice) + "€"
         
-        priceForEntry.text = String(totalPrice) + "€"
+        if quantityTickets > 0 {
+            buyButton.isEnabled = true
+            buyButton.backgroundColor = UIColor(named: "Rojo")
+        }else{
+            buyButton.isEnabled = false
+            buyButton.backgroundColor = UIColor.lightGray
+            priceForEntry.text = "-"
+            numberOfTickets.text = ""
+        }
     }
 }

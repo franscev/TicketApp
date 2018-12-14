@@ -15,6 +15,7 @@ private let keyImage = "4"
 
 var dictionary: [String: UIImage] = [:]
 
+// SET DICTIONARY
 func setDictionary(){
     
     dictionary["Julian Lage"] = #imageLiteral(resourceName: "julian")
@@ -36,6 +37,7 @@ func setDictionary(){
     dictionary["Zaumazein"] = #imageLiteral(resourceName: "zauma")
 }
 
+// SAVE DATA USER
 func saveData(){
     
     artistsData.removeAll()
@@ -60,7 +62,7 @@ func saveData(){
     
 }
 
-
+// SET DATA USER
 func setData(){
     setDictionary()
     let settingArtist = UserDefaults.standard.array(forKey: keyArtist)
@@ -68,9 +70,8 @@ func setData(){
     let settingPlace = UserDefaults.standard.array(forKey: keyPlace)
     
     let settingDate = UserDefaults.standard.array(forKey: keyDate)
+
     
-    let settingImage = UserDefaults.standard.array(forKey: keyImage)
-  
     UserDefaults.standard.synchronize()
     
     if settingArtist == nil {

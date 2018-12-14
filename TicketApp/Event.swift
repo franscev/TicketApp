@@ -12,6 +12,7 @@ class Event: NSObject {
     let price: Int
     let tickets: Int
     
+    // SET CONSTRUCTOR
     init(title: String, category: ConcertType, date: String, place:String, image:UIImage, tickets: Int, price: Int) {
         self.title = title
         self.category = category
@@ -23,6 +24,7 @@ class Event: NSObject {
         
     }
     
+    // SET CONCERT TYPE
     enum ConcertType: String{
         case jazz = "Jazz"
         case indieRock = "Indie/Rock"
