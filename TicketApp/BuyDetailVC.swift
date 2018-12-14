@@ -23,11 +23,20 @@ class BuyDetailVC: UIViewController {
     var quantityTickets = 0
     
   
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        if dismissBool{
+//            dismissBool = false
+//            print(dismissBool)
+//            dismiss(animated: true, completion: nil)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-
+       
+        
         initStepper()
         
         nameLabel.text = artistName
@@ -35,9 +44,9 @@ class BuyDetailVC: UIViewController {
         placeLabel.text = place
         pictureImgView.image = imageArtist
       
-        
     }
     
+   
     @IBAction func buyTicketButton(_ sender: Any) {
     
 
@@ -51,6 +60,8 @@ class BuyDetailVC: UIViewController {
         stepper.value = 0
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let bought = segue.destination as! Bought
@@ -58,14 +69,13 @@ class BuyDetailVC: UIViewController {
         
         buyButton = sender as! UIButton
         
-        
         let event = Event(title: artistName, category: Event.ConcertType.indieRock, date: date, place: place, image: imageArtist, tickets: 0, price: 0)
         
         boughtTickets.append(event)
         print("Prueba: " + boughtTickets[boughtTickets.count - 1].title)
         
         bought.succesfull = "You have bought " + String(quantityTickets) + " tickets" + " of " + artistName + " " + place + " " + "in " + date
-        
+        saveData()
     }
     
     @IBAction func chooseNumberOfTickets(_ sender: UIStepper) {

@@ -16,6 +16,7 @@
 		7FE4BE8221A8196700EDE964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE8121A8196700EDE964 /* Assets.xcassets */; };
 		7FE4BE8521A8196700EDE964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BE8321A8196700EDE964 /* LaunchScreen.storyboard */; };
 		7FEE517421C270CF00A64936 /* PopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE517321C270CF00A64936 /* PopUP.swift */; };
+		7FF079BA21C3BF4300183F13 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF079B921C3BF4300183F13 /* DataUser.swift */; };
 		7FFCEAE221AEA4910011367D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE121AEA4910011367D /* Settings.bundle */; };
 		7FFCEAE621AEB6910011367D /* YourTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCEAE521AEB6910011367D /* YourTickets.swift */; };
 		8817324721BDAB5900AA249F /* TabBarCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817324621BDAB5900AA249F /* TabBarCont.swift */; };
@@ -38,6 +39,7 @@
 		7FE4BE8421A8196700EDE964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE4BE8621A8196700EDE964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEE517321C270CF00A64936 /* PopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUP.swift; sourceTree = "<group>"; };
+		7FF079B921C3BF4300183F13 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		7FFCEAE121AEA4910011367D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7FFCEAE521AEB6910011367D /* YourTickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTickets.swift; sourceTree = "<group>"; };
 		8817324621BDAB5900AA249F /* TabBarCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCont.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				88A3A8AB21BF47D400853221 /* BoughtTicketCell.swift */,
 				7FA2A5DB21C11C83008B1FA7 /* TicketsBought.swift */,
 				7FEE517321C270CF00A64936 /* PopUP.swift */,
+				7FF079B921C3BF4300183F13 /* DataUser.swift */,
 			);
 			path = TicketApp;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF079BA21C3BF4300183F13 /* DataUser.swift in Sources */,
 				7F41682B21B1552D00A38378 /* BuyVC.swift in Sources */,
 				8817324721BDAB5900AA249F /* TabBarCont.swift in Sources */,
 				88B0FE7221BE36F800A5E95B /* Bought.swift in Sources */,

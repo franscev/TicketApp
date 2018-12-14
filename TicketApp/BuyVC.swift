@@ -34,6 +34,7 @@ class BuyVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
 
     override func viewDidLoad() {
         
+        setData()
         setUpConcerts()
         setUpSearchBar()
         setUpDate()

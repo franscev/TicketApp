@@ -33,7 +33,7 @@ class YourTicketDetail: UIViewController {
         filter?.setValue(data, forKey: "inputMessage")
         let ciImage = filter?.outputImage
         
-        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        let transform = CGAffineTransform(scaleX: 5, y: 5)
         let transformImage = ciImage?.transformed(by: transform)
         
         let image = UIImage(ciImage: transformImage!)

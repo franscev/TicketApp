@@ -14,6 +14,8 @@ class Bought: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         succesfullLabel.text = succesfull
         
         self.navigationItem.setHidesBackButton(true, animated:true)
@@ -23,12 +25,12 @@ class Bought: UIViewController {
   }
     
     @IBAction func getYourTicketsAction(_ sender: Any) {
+//            dismissBool = true       
+            dismiss(animated: true, completion: nil)
         
-//        [self.presentingViewController?.presentingViewController dismiss:YES completion:nil] as [Any];
-//            presentingViewController?.dismiss(animated: true, completion:nil))
-//                self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
-
+        
+        }
     }
     
-}
+
 
